@@ -8,6 +8,8 @@ import rospy
 import tensorflow as tf
 from styx_msgs.msg import TrafficLight
 
+LOG_CLASSIFICATION_TIME = False
+
 
 class TLClassifier(object):
     def __init__(self, model_file):
@@ -70,7 +72,8 @@ class TLClassifier(object):
                  self.detection_classes, self.num_detections],
                 feed_dict={self.image_tensor: image_np})
         time2 = time.time()
-        rospy.logwarn("elapsed time %f"%(time2 - time1))
+        if LOG_CLASSIFICATION_TIME:
+            rospy.logwarn("elapsed time %f"%(time2 - time1))
 
         boxes = np.squeeze(boxes)
         scores = np.squeeze(scores)
