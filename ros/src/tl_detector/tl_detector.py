@@ -76,13 +76,10 @@ class TLDetector(object):
         Args:
             msg (Image): image from car-mounted camera
 
-        """
-        start_time = time.time()        
+        """        
         self.has_image = True
         self.camera_image = msg
-        light_wp, state = self.process_traffic_lights()
-        end_time = time.time()
-        print("process_traffic_lights() function takes", end_time-start_time, "seconds")
+        light_wp, state = self.process_traffic_lights()        
 
         '''
         Publish upcoming red lights at camera frequency.
@@ -96,11 +93,9 @@ class TLDetector(object):
         elif self.state_count >= STATE_COUNT_THRESHOLD:
             self.last_state = self.state
             light_wp = light_wp if state == TrafficLight.RED else -1
-            self.last_wp = light_wp
-            rospy.logwarn("The light waypoint index updated: %d"%(light_wp))
+            self.last_wp = light_wp            
             self.upcoming_red_light_pub.publish(Int32(light_wp))
-        else:
-            rospy.logwarn("The light waypoint index updated: %d"%(self.last_wp))
+        else:            
             self.upcoming_red_light_pub.publish(Int32(self.last_wp))
         self.state_count += 1
 

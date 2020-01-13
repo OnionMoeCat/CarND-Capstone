@@ -1,3 +1,5 @@
+import time
+
 import os
 
 import cv2
@@ -60,12 +62,15 @@ class TLClassifier(object):
         (im_width, im_height, _) = image_rgb.shape
         image_np = np.expand_dims(image_rgb, axis=0)
 
+        time1 = time.time()
         # Actual detection.
         with self.detection_graph.as_default():
             (boxes, scores, classes, num) = self.sess.run(
                 [self.detection_boxes, self.detection_scores,
                  self.detection_classes, self.num_detections],
                 feed_dict={self.image_tensor: image_np})
+        time2 = time.time()
+        rospy.logwarn("elapsed time %f"%(time2 - time1))
 
         boxes = np.squeeze(boxes)
         scores = np.squeeze(scores)
