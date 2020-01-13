@@ -16,7 +16,7 @@ import yaml
 
 STATE_COUNT_THRESHOLD = 3
 
-TEST_MODE_ENABLED = True
+TEST_MODE_ENABLED = False
 SAVE_IMAGES = False
 LOGGING_THROTTLE_FACTOR = 5 # Only log at this rate (1 / Hz)
 
@@ -34,7 +34,7 @@ class TLDetector(object):
         sub1 = rospy.Subscriber('/current_pose', PoseStamped, self.pose_cb)
         sub2 = rospy.Subscriber('/base_waypoints', Lane, self.waypoints_cb)       
         sub3 = rospy.Subscriber('/vehicle/traffic_lights', TrafficLightArray, self.traffic_cb)
-        sub6 = rospy.Subscriber('/image_color', Image, self.image_cb)
+        sub6 = rospy.Subscriber('/image_color', Image, self.image_cb, queue_size=1)
 
         config_string = rospy.get_param("/traffic_light_config")
         self.config = yaml.load(config_string)
@@ -77,10 +77,12 @@ class TLDetector(object):
             msg (Image): image from car-mounted camera
 
         """
-        rospy.logerr("image cb %f"%(time.time()))
+        start_time = time.time()        
         self.has_image = True
         self.camera_image = msg
         light_wp, state = self.process_traffic_lights()
+        end_time = time.time()
+        print("process_traffic_lights() function takes", end_time-start_time, "seconds")
 
         '''
         Publish upcoming red lights at camera frequency.
@@ -128,11 +130,11 @@ class TLDetector(object):
         # For test mode, just return the light state
         if TEST_MODE_ENABLED:
             classification = light.state            
-        else:
+        else:            
             cv_image = self.bridge.imgmsg_to_cv2(self.camera_image, "bgr8")
 
             #Get classification
-            classification = self.light_classifier.get_classification(cv_image)
+            classification = self.light_classifier.get_classification(cv_image)            
 
             # Save image (throttled)
             if SAVE_IMAGES and (self.process_count % LOGGING_THROTTLE_FACTOR == 0):
