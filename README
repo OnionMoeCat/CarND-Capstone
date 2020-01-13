@@ -1,0 +1,135 @@
+[
+    {
+        "Id": "sha256:3376fcc889249c8451172ccd6430607fe2570ed7be049c4a75f7a5109f0c06a3",
+        "RepoTags": [
+            "capstone:latest"
+        ],
+        "RepoDigests": [],
+        "Parent": "sha256:2c5d658bc8f6cc94b6ce46196474330f6676ccb7f225850888012931288a5cc0",
+        "Comment": "",
+        "Created": "2020-01-12T02:02:48.720835094Z",
+        "Container": "815d5fb0d623f043de317d4beae933f36c9e81a32f36dcd6f37b6f0c92c7324d",
+        "ContainerConfig": {
+            "Hostname": "815d5fb0d623",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "LANG=C.UTF-8",
+                "LC_ALL=C.UTF-8",
+                "ROS_DISTRO=kinetic"
+            ],
+            "Cmd": [
+                "/bin/sh",
+                "-c",
+                "#(nop) WORKDIR /capstone/ros"
+            ],
+            "ArgsEscaped": true,
+            "Image": "sha256:2c5d658bc8f6cc94b6ce46196474330f6676ccb7f225850888012931288a5cc0",
+            "Volumes": {
+                "/capstone": {},
+                "/root/.ros/log/": {}
+            },
+            "WorkingDir": "/capstone/ros",
+            "Entrypoint": [
+                "/ros_entrypoint.sh"
+            ],
+            "OnBuild": null,
+            "Labels": {
+                "maintainer": "olala7846@gmail.com"
+            }
+        },
+        "DockerVersion": "19.03.5",
+        "Author": "",
+        "Config": {
+            "Hostname": "",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "LANG=C.UTF-8",
+                "LC_ALL=C.UTF-8",
+                "ROS_DISTRO=kinetic"
+            ],
+            "Cmd": [
+                "bash"
+            ],
+            "ArgsEscaped": true,
+            "Image": "sha256:2c5d658bc8f6cc94b6ce46196474330f6676ccb7f225850888012931288a5cc0",
+            "Volumes": {
+                "/capstone": {},
+                "/root/.ros/log/": {}
+            },
+            "WorkingDir": "/capstone/ros",
+            "Entrypoint": [
+                "/ros_entrypoint.sh"
+            ],
+            "OnBuild": null,
+            "Labels": {
+                "maintainer": "olala7846@gmail.com"
+            }
+        },
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 3175654160,
+        "VirtualSize": 3175654160,
+        "GraphDriver": {
+            "Data": {
+                "LowerDir": "/var/lib/docker/overlay2/e3bca7c91c518c5480e807837451fbe755e20bfc7f9ecda7a5154d11cb329502/diff:/var/lib/docker/overlay2/69c21f9c9ef5f92fe85c6441b92c931398f9d8b6852fa729a954319df151bb9c/diff:/var/lib/docker/overlay2/b823cead710e691c06f2e77a5e0e358236b7ad1bcabf3dd89418b741840fe115/diff:/var/lib/docker/overlay2/06229101494fcfb82521d44f02df5c3f907b5625c5f87fe83227d5d3efd64d2a/diff:/var/lib/docker/overlay2/a32ad8e91a825087ffd0673d532874afcb69dc4b951b0e2959f186fcb9e37b4f/diff:/var/lib/docker/overlay2/1ceb65373ffc281c43ded01d9f40c2b02808c596fa337be9ecb49bc5e2cf230e/diff:/var/lib/docker/overlay2/53a283ac17c6e72a1312c543d33fa6dbc8735ed28cb506f40ea93ba9e81792c5/diff:/var/lib/docker/overlay2/06db199a304f38f4ee24d1b6590caa7c7df66daedd4c9b2f725b149412c22299/diff:/var/lib/docker/overlay2/3a198eac83a2817c9198ed6db195fa2031440fd4de91d16012e60d54dcc44463/diff:/var/lib/docker/overlay2/bb6f84f581d29236d0fb8bf0c3a69b61274a3e455f344527c433c6c749fd83c9/diff:/var/lib/docker/overlay2/81bd538a6a168bfb459e78d825eb8218b3d7dc42b3bf3def9982f6b8e6cfe02d/diff:/var/lib/docker/overlay2/56e1a9e18c8245b4a08c11ec21722b400a90459cd0c7504384c22c7911f4f10b/diff:/var/lib/docker/overlay2/1b5c980adecde81e254e0807037024a0c0fd05d1a3154af10e69d354add0930c/diff:/var/lib/docker/overlay2/d83d39bba1609d91ecff1422199a54c4be87062594803f9040f33269bdb09a03/diff:/var/lib/docker/overlay2/c982ec9587cf659f68a034b99d845199c49cb7cbfea7c28ba2964d3b95e5948f/diff:/var/lib/docker/overlay2/f3ea580d7ca462af9bf1344affaaccfdcffcd063af34c2b455643d71ccd25f18/diff:/var/lib/docker/overlay2/e19c3c884bb3965089b19f64e5756da1b00b00090bbb1b37972f7f5549af2843/diff:/var/lib/docker/overlay2/03f6c70bd38c068085aeed66583304661a2bafe7018e173bbe5900031d644d9d/diff:/var/lib/docker/overlay2/23dbee322c813bace185b46c6e4c7718ad721623460207433e085ae9d548c9af/diff:/var/lib/docker/overlay2/a7ae83491376cf2112444470f93e745324e83ae776d24c61eba7cee9398c1c37/diff:/var/lib/docker/overlay2/61c6e28afd602fc81e157a4d1371f3e63e5a83c0e01a72473c5b2fa4129ca7b7/diff:/var/lib/docker/overlay2/2ecdd7313c4edbd7df44de507a5bfabfacbb948faf85560a9af9ad073675dfec/diff:/var/lib/docker/overlay2/0e8548e54823adf7686cc8c64cfd9d54158abced42da2cde93771716ebc38283/diff:/var/lib/docker/overlay2/499b0d15aaade4b0800e5834bb32f0af6b85d937ae4655371a206fe4c2ac1356/diff:/var/lib/docker/overlay2/99166aefe6433f2165b7deebb67221755fe3af5d10e7e85ec107ad2d2362d042/diff:/var/lib/docker/overlay2/c786092651a015153832d65f8ab611170cb38a5bfdac10ce1e65aa2a75e4ed79/diff:/var/lib/docker/overlay2/152840501e133a972f7b8bdc35798cbeefaae8afef961dd7805fe9132c3f7c4e/diff:/var/lib/docker/overlay2/8ddab242a0e1a8b003ae2e34cf50be38931a08168dd8e51b3ed3e6d3d3afdb27/diff",
+                "MergedDir": "/var/lib/docker/overlay2/6226eed5c7ec624a9a59cbeaa3beff2190e5a180757def8738481923b5f03800/merged",
+                "UpperDir": "/var/lib/docker/overlay2/6226eed5c7ec624a9a59cbeaa3beff2190e5a180757def8738481923b5f03800/diff",
+                "WorkDir": "/var/lib/docker/overlay2/6226eed5c7ec624a9a59cbeaa3beff2190e5a180757def8738481923b5f03800/work"
+            },
+            "Name": "overlay2"
+        },
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:91d23cf5425acce8ca4402d83139cec63a5547d1a704af63478df008f9b2e4e0",
+                "sha256:f36b28e4310dbc9a2145292188f06c42b8464773b2ef21bd24f958c653555cd1",
+                "sha256:6cb741cb00b79a4ddfc008982d10db40b0b693740f1d8ce9eba6d18a0501cd0d",
+                "sha256:77008e118980159bff059c84efadeadd550767db65579466d2d0ad801577ff5d",
+                "sha256:eb4774ce26cc292dae781358abd9575ff30886b090b786bebd53e515cae36e54",
+                "sha256:8df5f76540e93dbfbd3c94da29f310a5514bb64db5b7b6d147c7727f90a33c85",
+                "sha256:4284a8933c07d9c4576b6c88bc21d4f51302ae1e7ea2e30b7bc7c55e5b7565f1",
+                "sha256:54e13747e76fe8c86a7f3eb6bc734789249b1acb09680cc20abcb7ffb191e86c",
+                "sha256:e79a37adb2dec60136dfcc724fc3d248dd3d80bb285bea136ec607e186e05fdd",
+                "sha256:499ffae782428445cc01a1706423e4c7e378d2d93158c1e75bc7bab13528ef2f",
+                "sha256:b8b2d74ca5a95ee885d754a44119ae6128c0a45c8f9f966a4194ee8eb116c52c",
+                "sha256:733f306fc0c410bddb9ec366e4192cc097b7e8853587be94599e82e6c08408ea",
+                "sha256:02aac1fda88fe6c622b199d46527bc87c6bfedd68ee2532b818086f34655121a",
+                "sha256:2b4ad35d10a38521d6b8f131483dad7cb9021f406311a027b8bbe33d26c2feeb",
+                "sha256:849146f24950e242ccfc457d099f554ae79bb52b1c4d7c82b46aa85818bde4b8",
+                "sha256:c15b41ad61ce773ceafdabeca9468130760326a7c7f16ea8c4f54ad6e403fe62",
+                "sha256:9e5b5982d808e487fc5bd0c24e79ba71131ccc4be40e0c6efa354322d010076b",
+                "sha256:a03e8a63b4fbb361c3488f71e0e546c136d714c202d7ac148375d9920c6f0149",
+                "sha256:d4d80221482ca283eb95619df1949c8248a12220e615d38121896975fe671e96",
+                "sha256:1079e1357907f00f35fad425308ca8869287ff3c34a06bca40ad9c6aa5a703ed",
+                "sha256:c61a3623c04e934fcd7e94108ee74dd3e0e4a719703ad871a7f7d7df7f749295",
+                "sha256:bd9861efb1476435136f5efd5ed19a91f8ab031bb63fe9ce52266cd0f191bf5a",
+                "sha256:dea1a2215c9ad8913bc708db3d832652a2ce3b6ec73c1c4084a0764b56a8f923",
+                "sha256:19c6469bfc305b3830eba67d00bca1188d0a2b07378e52494828873e78cc6ac5",
+                "sha256:7847bf8a95cef98c012383c60e25b708ab895d9b2ac13320d88a22538fc9a349",
+                "sha256:76e33dc4f8c80f3022287720cdb144f5770489f037289f240ac512e1d3b13216",
+                "sha256:d7b7938ffd2edc2264b424aa6f49aec9309848c7b3e91b1aeadded8fdf68ca21",
+                "sha256:9886eb82613a8850f63f0f7fd69ef726af785ff6bccc741a75309a9f18a5c512",
+                "sha256:b89f8561017265adf413819d29c5fc99a2adcdc5c92273c59828e19844fc6089"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "2020-01-12T12:32:32.791482181-08:00"
+        }
+    }
+]
