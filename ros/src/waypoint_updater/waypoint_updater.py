@@ -30,7 +30,7 @@ STOP_LINE_MARGIN = 2
 CONSTANT_DECEL = 1 / LOOKAHEAD_WPS
 
 MAX_DECEL = 0.5
-LOGGING_THROTTLE_FACTOR = 20
+LOGGING_THROTTLE_FACTOR = 1
 
 class WaypointUpdater(object):
     def __init__(self):
@@ -69,13 +69,13 @@ class WaypointUpdater(object):
 
     def decelerate_waypoints(self, waypoints, closest_idx):
         temp = []
+        stop_idx = max(self.stopline_wp_idx - closest_idx - STOP_LINE_MARGIN, 0)
         for i, wp in enumerate(waypoints):
 
             p = Waypoint()
             p.pose = wp.pose
 
             # Distance includes a number of waypoints back so front of car stops at line
-            stop_idx = max(self.stopline_wp_idx - closest_idx - STOP_LINE_MARGIN, 0)
             dist = self.distance(waypoints, i, stop_idx)
             vel = math.sqrt(2 * MAX_DECEL * dist)
             if vel < 1.0:
@@ -89,7 +89,7 @@ class WaypointUpdater(object):
             size = len(waypoints) - 1
             vel_start = temp[0].twist.twist.linear.x
             vel_end = temp[size].twist.twist.linear.x
-            rospy.logwarn("DECEL: vel[0]={:.2f}, vel[{}]={:.2f}".format(vel_start, size, vel_end))
+            rospy.logwarn("DECEL: vel[0]={:.2f}, vel[{}]={:.2f}, stopline_wp_idx={:d}, closest_idx={:d}".format(vel_start, size, vel_end, self.stopline_wp_idx, closest_idx))
         return temp        
 
     def spin(self):
