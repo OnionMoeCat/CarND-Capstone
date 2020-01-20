@@ -41,6 +41,7 @@ class Controller(object):
 
         if not kwargs['dbw_enabled']:
            self.throttle_controller.reset()
+           self.vel_lpf.reset()
            return 0, 0, 1
 
         current_vel = self.vel_lpf.filt(kwargs['current_vel'])

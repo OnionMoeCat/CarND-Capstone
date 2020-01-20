@@ -89,7 +89,7 @@ class WaypointUpdater(object):
             size = len(waypoints) - 1
             vel_start = temp[0].twist.twist.linear.x
             vel_end = temp[size].twist.twist.linear.x
-            rospy.logwarn("DECEL: vel[0]={:.2f}, vel[{}]={:.2f}, stopline_wp_idx={:d}, closest_idx={:d}".format(vel_start, size, vel_end, self.stopline_wp_idx, closest_idx))
+            rospy.logwarn("DECEL: vel[0]={:.2f}, vel[{}]={:.2f}, stopline_wp_idx={}, closest_idx={}".format(vel_start, size, vel_end, self.stopline_wp_idx, closest_idx))
         return temp        
 
     def spin(self):
